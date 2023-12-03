@@ -51,7 +51,7 @@ impl<'a> Iterator for Part2Digits<'a> {
                     return Some(digit_idx as u32 + 1);
                 }
             }
-            
+
             // If we get here, we didn't find a digit or digit string, so skip
             // the first character and try again
             self.source = &self.source[1..];
@@ -88,16 +88,22 @@ treb7uchet",
 
         assert_eq!(solve_part_1(&input), 142);
     }
-    
+
     #[test]
     fn test_part_2_digits() {
         let line = "fivetwoqmlk22eightfive";
-        assert_eq!(vec![5, 2, 2, 2, 8, 5], Part2Digits { source: line }.collect::<Vec<_>>());
-        
+        assert_eq!(
+            vec![5, 2, 2, 2, 8, 5],
+            Part2Digits { source: line }.collect::<Vec<_>>()
+        );
+
         // "zero" isn't a digit in this problem
         let line = "zeroonetwo012";
-        assert_eq!(vec![1, 2, 0, 1, 2], Part2Digits { source: line }.collect::<Vec<_>>());
-        
+        assert_eq!(
+            vec![1, 2, 0, 1, 2],
+            Part2Digits { source: line }.collect::<Vec<_>>()
+        );
+
         // Stupid overlapping words
         let line = "eightwo";
         assert_eq!(vec![8, 2], Part2Digits { source: line }.collect::<Vec<_>>());
