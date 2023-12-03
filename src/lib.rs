@@ -224,4 +224,5 @@ macro_rules! define_days {
 define_days! {
     ("Trebuchet?!", 1, day_1),
     ("Cube Conundrum", 2, day_2),
+    ("Gear ratios", 3, day_3),
 }

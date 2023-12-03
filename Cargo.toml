@@ -9,3 +9,6 @@ edition = "2021"
 anyhow = "1.0.75"
 clap = { version = "4.4.10", features = ["derive"] }
 reqwest = { version = "0.11.22", features = ["cookies", "blocking"] }
+
+[dev-dependencies]
+pretty_assertions = "1.4.0"

@@ -1,6 +1,6 @@
-use std::path::PathBuf;
-use clap::Parser;
 use aoc_2023::{all_days, get_input, print_results_table};
+use clap::Parser;
+use std::path::PathBuf;
 
 #[derive(Parser, Debug)]
 #[command(name = "aoc", about = "Joey9801's advent-of-code solutions")]

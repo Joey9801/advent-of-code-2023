@@ -36,10 +36,12 @@ impl std::ops::Sub<Self> for Vec2 {
     type Output = Self;
 
     fn sub(self, rhs: Self) -> Self::Output {
-        Self { x: self.x - rhs.x, y: self.y - rhs.y }
+        Self {
+            x: self.x - rhs.x,
+            y: self.y - rhs.y,
+        }
     }
 }
-
 
 #[derive(Clone, Copy, Debug)]
 pub enum Dir {
@@ -58,13 +60,8 @@ impl Dir {
             Dir::Right => Vec2 { x: 1, y: 0 },
         }
     }
-    
-    pub const ALL: [Self; 4] = [
-        Self::Up,
-        Self::Down,
-        Self::Left,
-        Self::Right,
-    ];
+
+    pub const ALL: [Self; 4] = [Self::Up, Self::Down, Self::Left, Self::Right];
 }
 
 impl std::ops::Add<Dir> for Vec2 {
