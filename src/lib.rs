@@ -103,6 +103,7 @@ pub fn get_input(input_root: &std::path::Path, day_name: DayName) -> anyhow::Res
         );
         let client = reqwest::blocking::ClientBuilder::default()
             .cookie_provider(std::sync::Arc::new(jar))
+            .user_agent("github/joey9801")
             .build()?;
 
         let input = client.get(url).send()?.text()?;
