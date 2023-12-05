@@ -227,4 +227,5 @@ define_days! {
     ("Cube Conundrum", 2, day_2),
     ("Gear ratios", 3, day_3),
     ("Scratchcards", 4, day_4),
+    ("If You Give A Seed A Fertilizer", 5, day_5),
 }
