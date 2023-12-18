@@ -228,4 +228,5 @@ define_days! {
     ("Gear ratios", 3, day_3),
     ("Scratchcards", 4, day_4),
     ("If You Give A Seed A Fertilizer", 5, day_5),
+    ("Wait for it", 6, day_6),
 }
