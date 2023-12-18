@@ -229,4 +229,5 @@ define_days! {
     ("Scratchcards", 4, day_4),
     ("If You Give A Seed A Fertilizer", 5, day_5),
     ("Wait for it", 6, day_6),
+    ("Camel Cards", 7, day_7),
 }
