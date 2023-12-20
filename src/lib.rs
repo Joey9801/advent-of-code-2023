@@ -231,4 +231,5 @@ define_days! {
     ("Wait for it", 6, day_6),
     ("Camel Cards", 7, day_7),
     ("Haunted Wasteland", 8, day_8),
+    ("Mirage Maintenance", 9, day_9),
 }

@@ -97,3 +97,25 @@ where
     }
     result
 }
+
+/// Return the number of ways to choose k items from n items without repetition
+/// and without order.
+pub fn binomial_coefficient(n: i64, k: i64) -> i64 {
+    let mut result = 1;
+    for i in 0..k {
+        result *= n - i;
+        result /= i + 1;
+    }
+    result
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_binomial_coefficient() {
+        assert_eq!(super::binomial_coefficient(5, 3), 10);
+        assert_eq!(super::binomial_coefficient(5, 2), 10);
+        assert_eq!(super::binomial_coefficient(5, 1), 5);
+        assert_eq!(super::binomial_coefficient(5, 0), 1);
+    }
+}
