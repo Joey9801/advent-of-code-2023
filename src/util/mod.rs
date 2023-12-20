@@ -71,3 +71,29 @@ impl std::ops::Add<Dir> for Vec2 {
         self + rhs.to_vec2()
     }
 }
+
+pub fn gcm(a: i64, b: i64) -> i64 {
+    let mut a = a;
+    let mut b = b;
+    while b != 0 {
+        let t = b;
+        b = a % b;
+        a = t;
+    }
+    a
+}
+
+pub fn lcm(a: i64, b: i64) -> i64 {
+    a * b / gcm(a, b)
+}
+
+pub fn lcm_iter<I>(mut iter: I) -> i64
+where
+    I: Iterator<Item = i64>,
+{
+    let mut result = iter.next().unwrap();
+    for i in iter {
+        result = lcm(result, i);
+    }
+    result
+}
