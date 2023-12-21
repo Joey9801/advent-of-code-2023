@@ -1,4 +1,4 @@
-use crate::util::{Vec2, Map2d};
+use crate::util::{Vec2, Map2d, Map2dExt};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tile {

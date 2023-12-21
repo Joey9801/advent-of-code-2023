@@ -1,4 +1,4 @@
-use crate::util::{Dir, Map2d, Vec2};
+use crate::util::{Dir, Map2d, Vec2, Map2dExt};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 enum Cell {
