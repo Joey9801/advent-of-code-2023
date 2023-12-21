@@ -234,4 +234,5 @@ define_days! {
     ("Mirage Maintenance", 9, day_9),
     ("Pipe maze", 10, day_10),
     ("Cosmic Expansion", 11, day_11),
+    ("Hot springs", 12, day_12),
 }
