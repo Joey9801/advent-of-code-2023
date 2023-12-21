@@ -235,4 +235,5 @@ define_days! {
     ("Pipe maze", 10, day_10),
     ("Cosmic Expansion", 11, day_11),
     ("Hot springs", 12, day_12),
+    ("Point of Incidence", 13, day_13),
 }
