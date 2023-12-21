@@ -236,4 +236,5 @@ define_days! {
     ("Cosmic Expansion", 11, day_11),
     ("Hot springs", 12, day_12),
     ("Point of Incidence", 13, day_13),
+    ("Parabolic Reflector Dish", 14, day_14),
 }
