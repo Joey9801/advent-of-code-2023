@@ -1,19 +1,23 @@
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub struct Vec2 {
-    pub x: i32,
-    pub y: i32,
+    pub x: i64,
+    pub y: i64,
 }
 
 impl Vec2 {
     pub fn zero() -> Self {
         Self { x: 0, y: 0 }
     }
+
+    pub fn l1_norm(self) -> i64 {
+        self.x.abs() + self.y.abs()
+    }
 }
 
-impl std::ops::Mul<i32> for Vec2 {
+impl std::ops::Mul<i64> for Vec2 {
     type Output = Self;
 
-    fn mul(self, rhs: i32) -> Self::Output {
+    fn mul(self, rhs: i64) -> Self::Output {
         Self {
             x: self.x * rhs,
             y: self.y * rhs,
@@ -32,6 +36,20 @@ impl std::ops::Add<Self> for Vec2 {
     }
 }
 
+impl std::ops::Add<Self> for &Vec2 {
+    type Output = Vec2;
+
+    fn add(self, rhs: Self) -> Self::Output {
+        *self + *rhs
+    }
+}
+
+impl std::ops::AddAssign<Self> for Vec2 {
+    fn add_assign(&mut self, rhs: Self) {
+        *self = *self + rhs;
+    }
+}
+
 impl std::ops::Sub<Self> for Vec2 {
     type Output = Self;
 
@@ -40,6 +58,20 @@ impl std::ops::Sub<Self> for Vec2 {
             x: self.x - rhs.x,
             y: self.y - rhs.y,
         }
+    }
+}
+
+impl std::ops::Sub<Self> for &Vec2 {
+    type Output = Vec2;
+
+    fn sub(self, rhs: Self) -> Self::Output {
+        *self - *rhs
+    }
+}
+
+impl std::ops::SubAssign<Self> for Vec2 {
+    fn sub_assign(&mut self, rhs: Self) {
+        *self = *self - rhs;
     }
 }
 
@@ -116,6 +148,14 @@ pub fn binomial_coefficient(n: i64, k: i64) -> i64 {
         result /= i + 1;
     }
     result
+}
+
+pub fn pair_indices(len: usize) -> impl Iterator<Item = (usize, usize)> {
+    (0..len).flat_map(move |i| (i + 1..len).map(move |j| (i, j)))
+}
+
+pub fn pairs<T>(slice: &[T]) -> impl Iterator<Item = (&T, &T)> {
+    pair_indices(slice.len()).map(move |(i, j)| (&slice[i], &slice[j]))
 }
 
 #[cfg(test)]

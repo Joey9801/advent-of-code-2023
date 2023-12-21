@@ -85,8 +85,8 @@ impl Map {
 
     fn idx_to_pos(&self, idx: usize) -> Vec2 {
         Vec2 {
-            x: (idx % self.size.x as usize) as i32,
-            y: (idx / self.size.x as usize) as i32,
+            x: (idx % self.size.x as usize) as i64,
+            y: (idx / self.size.x as usize) as i64,
         }
     }
 
@@ -97,7 +97,7 @@ impl Map {
             .map(|idx| self.idx_to_pos(idx))
     }
 
-    fn get_line(&self, y: i32) -> &[Cell] {
+    fn get_line(&self, y: i64) -> &[Cell] {
         let start = self.pos_to_idx(Vec2 { x: 0, y });
         let end = self.pos_to_idx(Vec2 { x: self.size.x, y });
         &self.pipes[start..end]
@@ -127,8 +127,8 @@ pub fn parse(input: &str) -> Input {
     let size_x = input.lines().next().unwrap().len();
     let size_y = input.lines().count();
     let size = Vec2 {
-        x: size_x as i32,
-        y: size_y as i32,
+        x: size_x as i64,
+        y: size_y as i64,
     };
     let pipes = input
         .chars()
