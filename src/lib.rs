@@ -239,4 +239,5 @@ define_days! {
     ("Parabolic Reflector Dish", 14, day_14),
     ("Lens Library", 15, day_15),
     ("The Floor Will be Lava", 16, day_16),
+    ("Clumsy Crucible", 17, day_17),
 }

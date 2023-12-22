@@ -1,8 +1,9 @@
-mod combinatorial;
-mod dir;
-mod map2d;
-mod numbers;
-mod vec2;
+pub mod combinatorial;
+pub mod dir;
+pub mod map2d;
+pub mod numbers;
+pub mod vec2;
+pub mod graph;
 
 pub use combinatorial::*;
 pub use dir::Dir;

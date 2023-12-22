@@ -1,6 +1,6 @@
 use super::Vec2;
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub enum Dir {
     Up,
     Down,
@@ -24,6 +24,24 @@ impl Dir {
             Dir::Down => Dir::Up,
             Dir::Left => Dir::Right,
             Dir::Right => Dir::Left,
+        }
+    }
+
+    pub fn rotate_left(self) -> Self {
+        match self {
+            Dir::Up => Dir::Left,
+            Dir::Down => Dir::Right,
+            Dir::Left => Dir::Down,
+            Dir::Right => Dir::Up,
+        }
+    }
+
+    pub fn rotate_right(self) -> Self {
+        match self {
+            Dir::Up => Dir::Right,
+            Dir::Down => Dir::Left,
+            Dir::Left => Dir::Up,
+            Dir::Right => Dir::Down,
         }
     }
 
