@@ -238,4 +238,5 @@ define_days! {
     ("Point of Incidence", 13, day_13),
     ("Parabolic Reflector Dish", 14, day_14),
     ("Lens Library", 15, day_15),
+    ("The Floor Will be Lava", 16, day_16),
 }
