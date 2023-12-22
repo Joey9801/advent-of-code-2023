@@ -40,18 +40,19 @@ impl<Node> Ord for CostOrder<Node> {
     }
 }
 
-pub struct Path<Node> {
+#[derive(Debug)]
+pub struct Path<Node: Debug> {
     pub cost: i64,
     pub nodes: Vec<Node>,
 }
 
 pub fn dijkstra<Node, NodeIter>(
     start: Node,
-    is_end: impl Fn(&Node) -> bool,
-    next_nodes: impl Fn(&Node) -> NodeIter,
+    is_end: impl Fn(Node) -> bool,
+    next_nodes: impl Fn(Node) -> NodeIter,
 ) -> Option<Path<Node>>
 where
-    Node: Clone + Eq + Hash + Debug,
+    Node: Copy + Eq + Hash + Debug,
     NodeIter: Iterator<Item = NodeAndCost<Node>>,
 {
     let mut visited = HashSet::new();
@@ -75,13 +76,13 @@ where
         if visited.contains(&node) {
             continue;
         }
-        visited.insert(node.clone());
+        visited.insert(node);
 
         if node != prev_node {
             optimal_edges.insert(node.clone(), prev_node);
         }
 
-        if is_end(&node) {
+        if is_end(node) {
             end = Some(NodeAndCost {
                 node,
                 cost: path_cost,
@@ -92,7 +93,7 @@ where
         for NodeAndCost {
             node: next_node,
             cost: edge_cost,
-        } in next_nodes(&node)
+        } in next_nodes(node)
         {
             if visited.contains(&next_node) {
                 continue;
