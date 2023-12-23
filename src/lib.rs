@@ -241,4 +241,5 @@ define_days! {
     ("The Floor Will be Lava", 16, day_16),
     ("Clumsy Crucible", 17, day_17),
     ("Lavaduct Lagoon", 18, day_18),
+    ("Aplenty", 19, day_19),
 }
