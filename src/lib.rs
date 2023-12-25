@@ -242,4 +242,5 @@ define_days! {
     ("Clumsy Crucible", 17, day_17),
     ("Lavaduct Lagoon", 18, day_18),
     ("Aplenty", 19, day_19),
+    ("Never Tell Me The Odds", 24, day_24),
 }
