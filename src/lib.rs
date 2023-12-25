@@ -243,4 +243,5 @@ define_days! {
     ("Lavaduct Lagoon", 18, day_18),
     ("Aplenty", 19, day_19),
     ("Never Tell Me The Odds", 24, day_24),
+    ("Snowverload", 25, day_25),
 }
